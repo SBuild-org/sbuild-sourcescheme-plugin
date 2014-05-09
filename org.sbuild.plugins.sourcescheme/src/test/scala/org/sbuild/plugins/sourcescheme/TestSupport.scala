@@ -1,10 +1,10 @@
 package org.sbuild.test
 
-import java.io.File
-import org.sbuild.Project
-import java.io.FileOutputStream
 import java.io.BufferedOutputStream
+import java.io.File
+import java.io.FileOutputStream
 import java.io.PrintStream
+import org.sbuild.Project
 import org.sbuild.internal.BuildFileProject
 
 object TestSupport {
@@ -16,7 +16,8 @@ object TestSupport {
   }
 
   def createMainProject: Project = {
-    new BuildFileProject(createProjectFile)
+    val file = createProjectFile
+    new BuildFileProject(file, file.getParentFile)
   }
 
   def createMainProject(content: String): Project = {
@@ -25,7 +26,7 @@ object TestSupport {
     stream.print(content)
     stream.close()
 
-    new BuildFileProject(file)
+    new BuildFileProject(file, file.getParentFile)
   }
 
 }

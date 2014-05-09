@@ -16,9 +16,8 @@ class SBuild(implicit _project: Project) {
   val sourcesJar = s"target/${namespace}-${version}-sources.jar"
   val sourcesDir = "src/main/scala"
   val sbuildVersion = "0.7.9010.0-8-0-M1"
-  // val targetSbuildVersion = "0.7.9013"
 
-  Target("phony:all") dependsOn "jar" ~ sourcesJar // ~ "test"
+  Target("phony:all") dependsOn "jar" ~ sourcesJar ~ "test"
 
   import org.sbuild.plugins.sbuildplugin._
 
@@ -45,9 +44,8 @@ class SBuild(implicit _project: Project) {
       pluginClass = s"${namespace}.SourceScheme",
       pluginVersion = version,
       deps = Seq(),
-      // testDeps = Seq(s"http://sbuild.org/uploads/sbuild/${sbuildVersion}/org.sbuild.runner-${sbuildVersion}.jar"),
+      testDeps = Seq(s"http://sbuild.org/uploads/sbuild/${sbuildVersion}/org.sbuild.runner-${sbuildVersion}.jar"),
       sbuildVersion = sbuildPluginVersion
-      // manifest = Map("SBuild-Version" -> targetSBuildVersion)
     )
   }
 
