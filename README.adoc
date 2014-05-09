@@ -1,5 +1,5 @@
 = SBuild Source Scheme Plugin
-:pluginversion: 0.0.9000
+:pluginversion: 0.1.0
 :sbuildversion: 0.7.9010.0-8-0-M1
 :toc:
 :toc-placement: preamble
@@ -41,6 +41,6 @@ All configurable properties are documented via ScalaDoc. See file link:org.sbuil
 
 == Changelog
 
-=== SBuild Source Scheme Plugin 0.1.0 - _Not Released yet_
+=== SBuild Source Scheme Plugin 0.1.0 - 2014-05-09
 
-* Initial Release.
+* Initial Release for SBuild 0.8.0.M1 (0.7.9010)
