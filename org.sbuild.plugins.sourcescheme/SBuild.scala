@@ -57,7 +57,7 @@ class SBuild(implicit _project: Project) {
       version = version,
       artifactName = Some("SBuild SourceScheme Plugin"),
       description = Some("An SBuild Plugin that provides an Scheme Handler to fetch source packages."),
-      repository = Repository.SonatypeOss,
+      repository = Repository.SonatypeOss.copy(url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"),
       scm = Option(Scm(url = url, connection = url)),
       developers = Seq(Developer(id = "TobiasRoeser", name = "Tobias Roeser", email = "le.petit.fou@web.de")),
       gpg = true,
