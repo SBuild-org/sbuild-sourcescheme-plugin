@@ -11,7 +11,7 @@ import de.tototec.sbuild.ant.tasks._
 class SBuild(implicit _project: Project) {
 
   val namespace = "org.sbuild.plugins.sourcescheme"
-  val version = "0.0.9000"
+  val version = "0.1.0"
   val url = "https://github.com/SBuild-org/sbuild-sourcescheme-plugin"
   val sourcesJar = s"target/${namespace}-${version}-sources.jar"
   val sourcesDir = "src/main/scala"
