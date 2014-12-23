@@ -10,6 +10,6 @@ class SourceSchemePlugin(implicit project: Project) extends Plugin[SourceScheme]
 
   override def applyToProject(instances: Seq[(String, SourceScheme)]): Unit = instances foreach {
     case (name, sourceScheme) =>
-      SchemeHandler(sourceScheme.schemeName, new SourceSchemeHandler(sourceScheme.mappings))
+      SchemeHandler(sourceScheme.schemeName, new SourceSchemeHandler(sourceScheme.mappings, mapTargetFiles = true))
   }
 }
